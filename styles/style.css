@@ -1,5 +1,5 @@
 * {
-    font-family: "Fredoka", sans-serif;
+    /* font-family: "Fredoka", sans-serif; */
 }
 
 li {
@@ -9,6 +9,7 @@ li {
 a{
     text-decoration: none;
     color: black;
+    
     
 }
 
@@ -23,6 +24,7 @@ header{
     background-color: #F2B705;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 header ul{
@@ -32,4 +34,14 @@ header ul{
     align-items: center;
     padding-right: 32px;
     font-size: 20px;
+}
+
+main{
+    padding: 32px; 
+}
+
+section{
+    background-color: rgba(242, 183, 5, 0.7);
+    padding: 32px 64px;
+    
 }
