@@ -1,0 +1,35 @@
+* {
+    font-family: "Fredoka", sans-serif;
+}
+
+li {
+    list-style: none;/**/
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+body {
+    margin: 0;
+    /* background: linear-gradient( to right, #000 30%, #ffcb96 70%); */
+    background-color: #7A5B4B;
+}
+
+header{
+    display: flex;
+    background-color: #F2B705;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    gap: 32px; /*dá espaçamento entre os itens */
+ 
+    align-items: center;
+    padding-right: 32px;
+    font-size: 20px;
+}
