@@ -1,16 +1,23 @@
+/* 
+    1rem -> 16px 
+    2rem -> 32px
+    3rem -> 48px
+    4rem -> 64px
+*/
+
 * {
-    /* font-family: "Fredoka", sans-serif; */
+    font-family: "Fredoka", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 li {
     list-style: none;/**/
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
-    
-    
 }
 
 body {
@@ -19,29 +26,60 @@ body {
     background-color: #7A5B4B;
 }
 
-header{
+header {
     display: flex;
     background-color: #F2B705;
     justify-content: space-between;
-    align-items: center;
-    
+    align-items: center;   
 }
 
-header ul{
+header a img {
+    width: 60%
+}
+
+header ul {
     display: flex;
-    gap: 32px; /*dá espaçamento entre os itens */
+    gap: 2rem; /*dá espaçamento entre os itens */
  
     align-items: center;
-    padding-right: 32px;
+    padding-right: 2rem;
     font-size: 20px;
 }
 
-main{
+main {
     padding: 32px; 
 }
 
-section{
+section {
     background-color: rgba(242, 183, 5, 0.7);
-    padding: 32px 64px;
-    
+    padding: 2rem 4rem; /* 2rem vertical e 4rem horizontal */
+    border-radius: 1rem;
 }
+
+section h1 {
+    font-size: 2rem;
+}
+
+section h2 {
+    font-size: 1.6rem;
+}
+
+section p {
+    font-size: 1.2rem;
+}
+
+.botao-principal, .botao-secundario {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 1rem;
+  }
+  
+  .botao-principal {
+    background-color: #260101;
+    color: #D97904;
+  }
+  
+  .botao-secundario {
+    background-color: #D97904;
+    color: #260101;
+  }
