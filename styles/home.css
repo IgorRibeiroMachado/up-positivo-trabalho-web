@@ -30,7 +30,7 @@
 }
 
 .section-one-containers img {
-  width: 20%;
+  width: 30%;
 }
 
 .section-two h1 {
@@ -46,15 +46,64 @@
   width: 40%;
 }
 
+.carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrousel .left-arrow, .right-arrow {
+  background-color: black;
+  color: #F2B705;
+  padding: 1rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.carrousel .left-arrow:hover, .right-arrow:hover {
+  transform: scale(1.1);
+}
+
+.carrousel .card-container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
 .carrousel .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
 
+  text-align: center;
+
+  opacity: 0.9;
   background-color: black;
-  
+
+  margin: 0 2rem;
+
   padding: 1rem;
   color: #F2B705;
   border-radius: 1rem;
+
+  display: none;
+}
+
+.carrousel .active-card  {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carrousel .card h2, img {
+  margin-bottom: 1rem;
+}
+
+.carrousel .card img {
+  width: 40%;
+}
+
+.carrousel .card p {
+  max-width: 300px;
+  text-align: center;
 }
