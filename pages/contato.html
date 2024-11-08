@@ -1,51 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <title>Contato - Pizza Byte</title>
-    <link rel="icon" href="../imagens/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../styles/style.css" type="text/css" />
-    <link rel="stylesheet" href="../styles/contato.css" type="text/css" />
+	<head>
+		<meta charset="UTF-8" />
+		<title>Contato - Pizza Byte</title>
+		<link rel="icon" href="../imagens/logo.png" type="image/x-icon" />
+		<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+		<link rel="stylesheet" href="../styles/contato.css" type="text/css" />
 
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <a href="home.html">
-            <img src="../imagens/logo.png" alt="logo do site" style="display: block" />
-        </a>
-        <nav>
-            <ul>
-                <li><a href="./home.html">Página inicial</a></li>
-                <li><a href="./quem-somos.html">Quem somos</a></li>
-                <li><a href="./produtos.html">Produtos</a></li>
-                <li><a href="./contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+		<!-- Fontes -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+			rel="stylesheet"
+		/>
 
-    <div class="contact-content">
-        <h1>Fale Conosco</h1>
-        <p>Entre em contato conosco preenchendo o formulário abaixo:</p>
+		<style>
+			.toast {
+				visibility: hidden;
+				min-width: 250px;
+				background-color: green;
+				color: #fff;
+				text-align: center;
+				border-radius: 5px;
+				padding: 10px;
+				position: fixed;
+				bottom: 30px;
+				right: 30px;
+				z-index: 1;
+				transition: visibility 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+			}
 
-        <form class="contact-form">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required />
+			.toast.show {
+				visibility: visible;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<a href="home.html">
+				<img
+					src="../imagens/logo.png"
+					alt="logo do site"
+					style="display: block"
+				/>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="./home.html">Página inicial</a></li>
+					<li><a href="./quem-somos.html">Quem somos</a></li>
+					<li><a href="./produtos.html">Produtos</a></li>
+					<li><a href="./contato.html">Contato</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="toast" id="toast">Mensagem enviada!</div>
+		<div class="contact-content">
+			<h1>Fale Conosco</h1>
+			<p>Entre em contato conosco preenchendo o formulário abaixo:</p>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required />
+			<form onsubmit="enviar(event)" class="contact-form">
+				<label for="name">Nome:</label>
+				<input type="text" id="name" name="name" required />
 
-            <label for="subject">Assunto:</label>
-            <input type="text" id="subject" name="subject" required />
+				<label for="email">E-mail:</label>
+				<input type="email" id="email" name="email" required />
 
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+				<label for="subject">Assunto:</label>
+				<input type="text" id="subject" name="subject" required />
 
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-    </div>
-</body>
+				<label for="message">Mensagem:</label>
+				<textarea id="message" name="message" rows="5" required></textarea>
+
+				<button type="submit">Enviar Mensagem</button>
+			</form>
+		</div>
+		<script>
+			function enviar(e) {
+				if (e) {
+					// Não atualizar a página
+					e.preventDefault();
+
+					const form = document.getElementsByClassName("contact-form")[0];
+					form.reset();
+
+					console.log("Formulário enviado sem recarregar a página.");
+
+					mostrarToast();
+				} else {
+					console.error("Evento não foi passado.");
+				}
+			}
+
+			function mostrarToast() {
+				const toast = document.getElementById("toast");
+				toast.classList.add("show");
+
+				// Executa após 3 segundos
+				setTimeout(() => {
+					toast.classList.remove("show");
+				}, 3000);
+			}
+		</script>
+	</body>
 </html>
